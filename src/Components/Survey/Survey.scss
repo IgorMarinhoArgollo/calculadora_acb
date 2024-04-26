@@ -17,7 +17,7 @@
     max-width: 600px;
     width: 100%;
     
-    label {
+    .questions {
       margin-top: 40px;
       font-weight: 700;
       font-size: 19px;
@@ -29,12 +29,48 @@
         font-size: 24px;
         font-weight: 800;
         margin-top: 8px;
-        background-color: #6D7383;
+        background-color: var(--cinza);
         color: var(--branco);
         border: none;
         border-radius: 9px;
         padding-left: 10px;
         margin-left: 15px;
+        
+        &:hover {
+          border: solid 2px var(--azul);
+        }
+      }
+    }
+
+    .disputequestions {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+
+      label {
+        font-weight: 700;
+        font-size: 19px;
+        color: var(--branco);
+        height: 40px;
+        background-color: var(--cinza);
+        margin-top: 3px;
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+
+        input[type="radio"] {
+          display: none;
+        }
+
+        &:hover {
+          border: solid 2px var(--azul);
+          color: var(--azul);
+        }
+      }
+
+      .selected {
+        color: var(--verde);
+        border: solid 2px var(--verde);
       }
     }
   }

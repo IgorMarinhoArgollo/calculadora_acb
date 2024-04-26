@@ -4,6 +4,7 @@ import './Survey.scss';
 export default function Survey() {
   const [disputeValue, setDisputeValue] = useState('');
   const [disputeType, setDisputeType] = useState('');
+  const [numberOfArbitrators, setNumberOfArbitrators] = useState('');
 
   return (
     <div className='survey'>
@@ -17,14 +18,15 @@ export default function Survey() {
             id="disputeValue"
             value={disputeValue}
             onChange={(e) => setDisputeValue(e.target.value)}
+            step="any"
           />
         </label>
 
         <label htmlFor="disputeType" className='questions'>
           2. Qual o tipo de arbitragem desejada?
         </label>
-        <div className='disputeOptions'>
-          <label htmlFor="exp" className='options'>
+        <div className='disputequestions'>
+          <label htmlFor="exp" className={`options ${disputeType === 'exp' ? 'selected' : ''}`}>
             <input
               type="radio"
               name="disputeType"
@@ -35,7 +37,7 @@ export default function Survey() {
             />
             Arbitragem Expedita
           </label>
-          <label htmlFor="conv" className='options'>
+          <label htmlFor="conv" className={`options ${disputeType === 'conv' ? 'selected' : ''}`}>
             <input
               type="radio"
               name="disputeType"
@@ -48,8 +50,47 @@ export default function Survey() {
           </label>
         </div>
 
+        <label htmlFor="numberOfArbitrators" className='questions'>
+          3. Qual o número de árbitros?
+        </label>
+        <div className='disputequestions'>
+          <label htmlFor="option1" className={`options ${numberOfArbitrators === '1' ? 'selected' : ''}`}>
+            <input
+              type="radio"
+              name="numberOfArbitrators"
+              value="1"
+              id="option1"
+              checked={numberOfArbitrators === '1'}
+              onChange={() => setNumberOfArbitrators('1')}
+            />
+            1
+          </label>
+          <label htmlFor="option3" className={`options ${numberOfArbitrators === '3' ? 'selected' : ''}`}>
+            <input
+              type="radio"
+              name="numberOfArbitrators"
+              value="3"
+              id="option3"
+              checked={numberOfArbitrators === '3'}
+              onChange={() => setNumberOfArbitrators('3')}
+            />
+            3
+          </label>
+          <label htmlFor="option5" className={`options ${numberOfArbitrators === '5' ? 'selected' : ''}`}>
+            <input
+              type="radio"
+              name="numberOfArbitrators"
+              value="5"
+              id="option5"
+              checked={numberOfArbitrators === '5'}
+              onChange={() => setNumberOfArbitrators('5')}
+            />
+            5
+          </label>
+        </div>
         <p>{disputeValue}</p>
         <p>{disputeType}</p>
+        <p>{numberOfArbitrators}</p>
       </form>
     </div>
   )
