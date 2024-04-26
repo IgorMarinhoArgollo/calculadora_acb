@@ -200,21 +200,6 @@
     }
   }
 
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -273,6 +258,7 @@
       flex-direction: column;
       align-items: center;
       margin-bottom: 60px;
+      margin-top: 30px;
       
       p {
         font-size: 14px;
@@ -281,7 +267,6 @@
         
         .formInfo {
           font-size: 14px;
-          color: var(--branco);
         }
       }
       .results {

@@ -216,19 +216,6 @@
   height: 1px;
   background-color: var(--escuro);
 }
-.survey input[type=number]::-webkit-inner-spin-button,
-.survey input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.survey input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.survey input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 
 @media screen and (max-width: 1024px) {
   .survey h2 {
@@ -277,6 +264,7 @@
         -ms-flex-align: center;
             align-items: center;
     margin-bottom: 60px;
+    margin-top: 30px;
   }
   .survey #result p {
     font-size: 14px;
@@ -285,7 +273,6 @@
   }
   .survey #result p .formInfo {
     font-size: 14px;
-    color: var(--branco);
   }
   .survey #result .results {
     max-width: 90%;

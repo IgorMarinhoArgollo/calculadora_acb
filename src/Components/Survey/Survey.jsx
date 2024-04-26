@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import './Survey.scss';
+import CurrencyInput from 'react-currency-input-field';
+
 
 export default function Survey() {
-  const [disputeValue, setDisputeValue] = useState();
+  const [disputeValue, setDisputeValue] = useState('');
   const [disputeType, setDisputeType] = useState('');
   const [numberOfArbitrators, setNumberOfArbitrators] = useState(0);
   const [showResult, setShowResult] = useState(false);
@@ -25,9 +27,12 @@ export default function Survey() {
   };
   
   const calculator = async () => {
-    if (disputeValue > 0 && disputeValue <= 100000) {
+
+    const numericValue = parseFloat(disputeValue.replace(/,/g, '.'));
+
+    if (numericValue > 0 && numericValue <= 100000) {
       setRegistrationFee(1500);
-      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * numericValue), 180000);
       adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
@@ -44,9 +49,9 @@ export default function Survey() {
 
     } 
     
-    else if (disputeValue > 100000 && disputeValue <= 250000) {
+    else if (numericValue > 100000 && numericValue <= 250000) {
       setRegistrationFee(2000);
-      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * numericValue), 180000);
       adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
@@ -62,9 +67,9 @@ export default function Survey() {
       }
     }
 
-    else if (disputeValue > 250000 && disputeValue <= 500000) {
+    else if (numericValue > 250000 && numericValue <= 500000) {
       setRegistrationFee(2500);
-      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * numericValue), 180000);
       adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
@@ -80,9 +85,9 @@ export default function Survey() {
       }
     }
 
-    else if (disputeValue > 500000 && disputeValue <= 750000) {
+    else if (numericValue > 500000 && numericValue <= 750000) {
       setRegistrationFee(3000);
-      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * numericValue), 180000);
       adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
@@ -98,9 +103,9 @@ export default function Survey() {
       }
     }
       
-    else if (disputeValue > 750000 && disputeValue <= 1000000) {
+    else if (numericValue > 750000 && numericValue <= 1000000) {
       setRegistrationFee(3500);
-      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * numericValue), 180000);
       adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
@@ -116,9 +121,9 @@ export default function Survey() {
       }
     }
 
-    else if (disputeValue > 1000000 && disputeValue <= 2000000) {
+    else if (numericValue > 1000000 && numericValue <= 2000000) {
       setRegistrationFee(6500);
-      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * numericValue), 180000);
       adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
@@ -134,9 +139,9 @@ export default function Survey() {
       }
     }
 
-    else if (disputeValue > 2000000 && disputeValue <= 5000000) {
+    else if (numericValue > 2000000 && numericValue <= 5000000) {
       setRegistrationFee(4500);
-      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * numericValue), 180000);
       adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
@@ -152,9 +157,9 @@ export default function Survey() {
       }
     }
 
-    else if (disputeValue > 5000000 && disputeValue <= 10000000) {
+    else if (numericValue > 5000000 && numericValue <= 10000000) {
       setRegistrationFee(5000);
-      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * numericValue), 180000);
       adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
@@ -170,9 +175,9 @@ export default function Survey() {
       }
     }
 
-    else if (disputeValue > 10000000 && disputeValue <= 20000000) {
+    else if (numericValue > 10000000 && numericValue <= 20000000) {
       setRegistrationFee(6000);
-      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * numericValue), 180000);
       adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
@@ -188,9 +193,9 @@ export default function Survey() {
       }
     }
 
-    else if (disputeValue > 20000000 && disputeValue <= 50000000) {
+    else if (numericValue > 20000000 && numericValue <= 50000000) {
       setRegistrationFee(7000);
-      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * numericValue), 180000);
       adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
@@ -206,9 +211,9 @@ export default function Survey() {
       }
     }
       
-    else if (disputeValue > 50000000) {
+    else if (numericValue > 50000000) {
       setRegistrationFee(20000);
-      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * numericValue), 180000);
       adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
@@ -232,19 +237,12 @@ export default function Survey() {
     }
   }, [showResult]);
 
-  const handleInputChange = () => {
+  const handleInputChange = (value, name) => {
+    if (name === 'disputeValue') {
+      setDisputeValue(value);
+    }
     setShowResult(false);
   };
-
-  const numberInputOnWheelPreventChange = (e) => {
-    e.target.blur()
-
-    e.stopPropagation()
-
-    setTimeout(() => {
-      e.target.focus()
-    }, 0)
-  }
 
   return (
     <div className='survey'>
@@ -253,18 +251,12 @@ export default function Survey() {
         <label htmlFor="disputeValue" className='questions'>
           1. Qual o valor da demanda?
           <span className="inputWrapper">
-            <input
-              type="number"
+            <CurrencyInput
               name="disputeValue"
               id="disputeValue"
               value={disputeValue}
-              onChange={(e) => {
-                handleInputChange();
-                setDisputeValue(parseFloat(e.target.value));
-              }}
-              step="any"
-              min={1}
-              onWheel={numberInputOnWheelPreventChange}
+              onValueChange={(value) => handleInputChange(value, 'disputeValue')}
+              decimalsLimit={2}
             />
           </span>
         </label>
@@ -303,6 +295,7 @@ export default function Survey() {
           </label>
         </div>
 
+        
         <label htmlFor="numberOfArbitrators" className='questions'>
           3. Qual o número de árbitros?
         </label>
@@ -361,7 +354,7 @@ export default function Survey() {
 
       {showResult && (
         <div id="result">
-          <p>Valor da Demanda: <b className='formInfo'>R$ {disputeValue.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
+          <p>Valor da Demanda: <b className='formInfo'>R$ {parseFloat(disputeValue.replace(/,/g, '.')).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
           <p>Tipo de Arbitragem: {disputeType =='exp'? <b className='formInfo'>Expedita</b> : <b className='formInfo'>Convencional</b>}</p>
           <p>Número de árbitros: <b className='formInfo'>{numberOfArbitrators}</b></p>
           <div className="results">
