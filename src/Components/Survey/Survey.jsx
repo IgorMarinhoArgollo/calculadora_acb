@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Survey.scss';
 
 export default function Survey() {
@@ -18,9 +18,10 @@ export default function Survey() {
   const handleSubmit = async(e) => {
     e.preventDefault();
     await calculator();
-    console.log(arbitratorsFee);
-    console.log(typeof (arbitratorsFee));
-    setShowResult(true); 
+     setShowResult(true);
+
+    const resultElement = document.getElementById('result');
+    resultElement.scrollIntoView({ behavior: 'smooth' });
   };
   
   const calculator = async () => {
@@ -213,6 +214,13 @@ export default function Survey() {
     }
   };
 
+  useEffect(() => {
+    if (showResult) {
+      const resultElement = document.getElementById('result');
+      resultElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [showResult]);
+
   return (
     <div className='survey'>
       <h2>Para calcular as custas da sua arbitragem, preencha o questionário abaixo:</h2>
@@ -269,8 +277,8 @@ export default function Survey() {
               name="numberOfArbitrators"
               value="1"
               id="option1"
-              checked={numberOfArbitrators === '1'}
-              onChange={() => setNumberOfArbitrators(parseInt(1))}
+              checked={numberOfArbitrators === 1}
+              onChange={() => setNumberOfArbitrators(1)}
             />
             1
           </label>
@@ -280,8 +288,8 @@ export default function Survey() {
               name="numberOfArbitrators"
               value="3"
               id="option3"
-              checked={numberOfArbitrators === '3'}
-              onChange={() => setNumberOfArbitrators(parseInt(3))}
+              checked={numberOfArbitrators === 3}
+              onChange={() => setNumberOfArbitrators(3)}
             />
             3
           </label>
@@ -291,8 +299,8 @@ export default function Survey() {
               name="numberOfArbitrators"
               value="5"
               id="option5"
-              checked={numberOfArbitrators === '5'}
-              onChange={() => setNumberOfArbitrators(parseInt(5))}
+              checked={numberOfArbitrators === 5}
+              onChange={() => setNumberOfArbitrators(5)}
             />
             5
           </label>
@@ -307,10 +315,17 @@ export default function Survey() {
       </form>
 
       {showResult && (
-        <div className="result">
-          <p>{registrationFee}</p>
-          <p>{adminitrationFee}</p>
-          <p>{arbitratorsFee}</p>
+        <div id="result">
+          <p>Valor da Demanda: <b className='formInfo'>R$ {disputeValue.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
+          <p>Tipo de Arbitragem: {disputeType =='exp'? <b className='formInfo'>Expedita</b> : <b className='formInfo'>Convencional</b>}</p>
+          <p>Número de árbitros: <b className='formInfo'>{numberOfArbitrators}</b></p>
+          <div className="results">
+            <p className='dotAfter'>Taxa de Registro: <b>R$ {registrationFee.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
+            <p className='dotAfter'>Taxa de Administração: <b>R$ {adminitrationFee.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
+            <p>Honorários dos Árbitros: <b>R$ {arbitratorsFee.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
+
+            <p className="total">Total: <b>R$ {(registrationFee + adminitrationFee + arbitratorsFee).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
+          </div>
         </div>
       )}
     </div>
