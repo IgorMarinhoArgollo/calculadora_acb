@@ -257,6 +257,7 @@ export default function Survey() {
               value={disputeValue}
               onValueChange={(value) => handleInputChange(value, 'disputeValue')}
               decimalsLimit={2}
+              allowNegativeValue={false}
             />
           </span>
         </label>
