@@ -27,7 +27,8 @@ export default function Survey() {
   const calculator = async () => {
     if (disputeValue > 0 && disputeValue <= 100000) {
       setRegistrationFee(1500);
-      const adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
       if (numberOfArbitrators === 1) {
@@ -45,7 +46,8 @@ export default function Survey() {
     
     else if (disputeValue > 100000 && disputeValue <= 250000) {
       setRegistrationFee(2000);
-      const adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
       if (numberOfArbitrators === 1) {
@@ -62,7 +64,8 @@ export default function Survey() {
 
     else if (disputeValue > 250000 && disputeValue <= 500000) {
       setRegistrationFee(2500);
-      const adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
       if (numberOfArbitrators === 1) {
@@ -79,7 +82,8 @@ export default function Survey() {
 
     else if (disputeValue > 500000 && disputeValue <= 750000) {
       setRegistrationFee(3000);
-      const adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
       if (numberOfArbitrators === 1) {
@@ -96,7 +100,8 @@ export default function Survey() {
       
     else if (disputeValue > 750000 && disputeValue <= 1000000) {
       setRegistrationFee(3500);
-      const adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
       if (numberOfArbitrators === 1) {
@@ -113,7 +118,8 @@ export default function Survey() {
 
     else if (disputeValue > 1000000 && disputeValue <= 2000000) {
       setRegistrationFee(6500);
-      const adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
       if (numberOfArbitrators === 1) {
@@ -130,7 +136,8 @@ export default function Survey() {
 
     else if (disputeValue > 2000000 && disputeValue <= 5000000) {
       setRegistrationFee(4500);
-      const adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
       if (numberOfArbitrators === 1) {
@@ -147,7 +154,8 @@ export default function Survey() {
 
     else if (disputeValue > 5000000 && disputeValue <= 10000000) {
       setRegistrationFee(5000);
-      const adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
       if (numberOfArbitrators === 1) {
@@ -164,7 +172,8 @@ export default function Survey() {
 
     else if (disputeValue > 10000000 && disputeValue <= 20000000) {
       setRegistrationFee(6000);
-      const adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
       if (numberOfArbitrators === 1) {
@@ -181,7 +190,8 @@ export default function Survey() {
 
     else if (disputeValue > 20000000 && disputeValue <= 50000000) {
       setRegistrationFee(7000);
-      const adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
       if (numberOfArbitrators === 1) {
@@ -198,7 +208,8 @@ export default function Survey() {
       
     else if (disputeValue > 50000000) {
       setRegistrationFee(20000);
-      const adminFee = Math.min((0.02 * disputeValue), 180000);
+      let adminFee = Math.min((0.02 * disputeValue), 180000);
+      adminFee = Math.max(adminFee, 5000);
       setAdministrationFee(adminFee);
 
       if (numberOfArbitrators === 1) {

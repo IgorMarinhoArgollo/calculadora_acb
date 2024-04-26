@@ -118,9 +118,18 @@
       margin-left: auto;
       margin-right: auto;
       border-radius: 5px;
+      margin-bottom: 15px;
 
       &:hover {
         border: solid 2px var(--branco);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+
+        &:hover {
+          border: none;
+        }
       }
     }
   }
