@@ -253,6 +253,7 @@ export default function Survey() {
                 setDisputeValue(parseFloat(e.target.value));
               }}
               step="any"
+              min={1}
             />
           </span>
         </label>
