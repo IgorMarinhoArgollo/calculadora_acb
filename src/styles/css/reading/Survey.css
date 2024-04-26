@@ -216,6 +216,19 @@
   height: 1px;
   background-color: var(--escuro);
 }
+.survey input[type=number]::-webkit-inner-spin-button,
+.survey input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.survey input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.survey input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 @media screen and (max-width: 1024px) {
   .survey h2 {
