@@ -232,6 +232,10 @@ export default function Survey() {
     }
   }, [showResult]);
 
+  const handleInputChange = () => {
+    setShowResult(false);
+  };
+
   return (
     <div className='survey'>
       <h2>Para calcular as custas da sua arbitragem, preencha o questionário abaixo:</h2>
@@ -244,7 +248,10 @@ export default function Survey() {
               name="disputeValue"
               id="disputeValue"
               value={disputeValue}
-              onChange={(e) => setDisputeValue(parseFloat(e.target.value))}
+              onChange={(e) => {
+                handleInputChange();
+                setDisputeValue(parseFloat(e.target.value));
+              }}
               step="any"
             />
           </span>
@@ -261,7 +268,10 @@ export default function Survey() {
               value="exp"
               id="exp"
               checked={disputeType === 'exp'}
-              onChange={() => setDisputeType('exp')}
+              onChange={() => {
+                handleInputChange();
+                setDisputeType('exp')
+              }}
             />
             Arbitragem Expedita
           </label>
@@ -272,7 +282,10 @@ export default function Survey() {
               value="conv"
               id="conv"
               checked={disputeType === 'conv'}
-              onChange={() => setDisputeType('conv')}
+              onChange={() => {
+                handleInputChange();
+                setDisputeType('conv')
+              }}
             />
             Arbitragem Convencional
           </label>
@@ -289,7 +302,10 @@ export default function Survey() {
               value="1"
               id="option1"
               checked={numberOfArbitrators === 1}
-              onChange={() => setNumberOfArbitrators(1)}
+              onChange={() => {
+                handleInputChange();
+                setNumberOfArbitrators(1)
+              }}
             />
             1
           </label>
@@ -300,7 +316,10 @@ export default function Survey() {
               value="3"
               id="option3"
               checked={numberOfArbitrators === 3}
-              onChange={() => setNumberOfArbitrators(3)}
+              onChange={() => {
+                handleInputChange();
+                setNumberOfArbitrators(3)
+              }}
             />
             3
           </label>
@@ -311,7 +330,10 @@ export default function Survey() {
               value="5"
               id="option5"
               checked={numberOfArbitrators === 5}
-              onChange={() => setNumberOfArbitrators(5)}
+              onChange={() => {
+                handleInputChange();
+                setNumberOfArbitrators(5)
+              }}
             />
             5
           </label>
