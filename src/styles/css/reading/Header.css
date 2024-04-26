@@ -1,0 +1,13 @@
+header {
+  background-color: var(--escuro);
+  padding: 10px 0;
+  padding-left: 100px;
+}
+header h1 {
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--branco);
+}
+header h1 b {
+  font-weight: 700;
+}/*# sourceMappingURL=Header.css.map */
