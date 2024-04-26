@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Survey.scss';
 
 export default function Survey() {
-  const [disputeValue, setDisputeValue] = useState(0);
+  const [disputeValue, setDisputeValue] = useState();
   const [disputeType, setDisputeType] = useState('');
   const [numberOfArbitrators, setNumberOfArbitrators] = useState(0);
   const [showResult, setShowResult] = useState(false);
