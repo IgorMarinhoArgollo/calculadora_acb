@@ -236,6 +236,16 @@ export default function Survey() {
     setShowResult(false);
   };
 
+  const numberInputOnWheelPreventChange = (e) => {
+    e.target.blur()
+
+    e.stopPropagation()
+
+    setTimeout(() => {
+      e.target.focus()
+    }, 0)
+  }
+
   return (
     <div className='survey'>
       <h2>Para calcular as custas da sua arbitragem, preencha o questionário abaixo:</h2>
@@ -254,6 +264,7 @@ export default function Survey() {
               }}
               step="any"
               min={1}
+              onWheel={numberInputOnWheelPreventChange}
             />
           </span>
         </label>
