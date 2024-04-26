@@ -44,20 +44,54 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.survey form .questions input {
+.survey form .questions .inputWrapper {
+  position: relative;
+  background-color: var(--cinza);
+  color: var(--branco);
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 42px;
+  border-radius: 9px;
+}
+.survey form .questions .inputWrapper input {
   height: 35px;
   font-size: 24px;
   font-weight: 800;
   margin-top: 8px;
-  background-color: var(--cinza);
-  color: var(--branco);
   border: none;
-  border-radius: 9px;
-  padding-left: 10px;
-  margin-left: 15px;
+  margin-left: 40px;
+  padding-left: 5px;
+  width: 94%;
+  background-color: transparent;
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  color: var(--branco);
 }
-.survey form .questions input:hover {
+.survey form .questions .inputWrapper input:focus {
+  outline: none;
+}
+.survey form .questions .inputWrapper:hover {
   border: solid 2px var(--azul);
+  border-radius: 9px;
+}
+.survey form .questions .inputWrapper:hover::before {
+  bottom: 3px;
+}
+.survey form .questions .inputWrapper::before {
+  content: "R$:";
+  left: 2px;
+  position: absolute;
+  font-size: 24px;
+  bottom: 5px;
+  color: var(--escuro);
 }
 .survey form .disputequestions {
   display: -webkit-box;
@@ -83,6 +117,7 @@
       -ms-flex-align: center;
           align-items: center;
   padding-left: 15px;
+  border-radius: 9px;
 }
 .survey form .disputequestions label input[type=radio] {
   display: none;
@@ -94,4 +129,20 @@
 .survey form .disputequestions .selected {
   color: var(--verde);
   border: solid 2px var(--verde);
+}
+.survey form #submitButton {
+  background-color: var(--azul);
+  border: none;
+  color: var(--branco);
+  font-size: 20px;
+  font-weight: 600;
+  width: 150px;
+  height: 35px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+.survey form #submitButton:hover {
+  border: solid 2px var(--branco);
 }/*# sourceMappingURL=Survey.css.map */

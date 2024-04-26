@@ -17,6 +17,6 @@ html {
   
   body {
   background: linear-gradient(to bottom, #5B6E8C, #839EC9, #ABBDD9, #779EDB, #5B6E8C);
-  height: 100vh;
+  height: auto;
   }
 }
