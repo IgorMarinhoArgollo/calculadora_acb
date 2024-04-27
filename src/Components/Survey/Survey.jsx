@@ -14,9 +14,9 @@ export default function Survey() {
   const [arbitratorsFee, setArbitratorsFee] = useState(0);
 
   const allQuestionsAnswered = () => {
-    return disputeValue !== '' && disputeType !== '' && numberOfArbitrators !== '';
+    const numericValue = disputeValue ? parseFloat(disputeValue.replace(/,/g, '.')) : 0;
+    return disputeValue !== '' && disputeType !== '' && numberOfArbitrators !== '' && numericValue > 0;
   };
-
   const handleSubmit = async(e) => {
     e.preventDefault();
     await calculator();
