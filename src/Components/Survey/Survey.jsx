@@ -17,6 +17,7 @@ export default function Survey() {
     const numericValue = disputeValue ? parseFloat(disputeValue.replace(/,/g, '.')) : 0;
     return disputeValue !== '' && disputeType !== '' && numberOfArbitrators !== '' && numericValue > 0;
   };
+  
   const handleSubmit = async(e) => {
     e.preventDefault();
     await calculator();
@@ -359,11 +360,11 @@ export default function Survey() {
           <p>Tipo de Arbitragem: {disputeType =='exp'? <b className='formInfo'>Expedita</b> : <b className='formInfo'>Convencional</b>}</p>
           <p>Número de árbitros: <b className='formInfo'>{numberOfArbitrators}</b></p>
           <div className="results">
-            <p className='dotAfter'>Taxa de Registro: <b>R$ {registrationFee.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
-            <p className='dotAfter'>Taxa de Administração: <b>R$ {adminitrationFee.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
+            <p className='dotAfter'>Taxa de Registro: <b>R$ {parseFloat(registrationFee.toFixed(2)).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
+            <p className='dotAfter'>Taxa de Administração: <b>R$ {parseFloat(adminitrationFee.toFixed(2)).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
             <p>Honorários dos Árbitros: <b>R$ {arbitratorsFee.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
 
-            <p className="total">Total: <b>R$ {(registrationFee + adminitrationFee + arbitratorsFee).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
+            <p className="total">Total: <b>R$ {parseFloat((registrationFee + adminitrationFee + arbitratorsFee).toFixed(2)).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
           </div>
         </div>
       )}
