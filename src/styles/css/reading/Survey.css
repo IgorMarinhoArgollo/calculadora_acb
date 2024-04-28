@@ -149,69 +149,6 @@
 .survey form #submitButton:disabled:hover {
   border: none;
 }
-.survey #result {
-  max-width: 600px;
-  width: 100%;
-  margin-top: 60px;
-}
-.survey #result p {
-  font-size: 23px;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-.survey #result p .formInfo {
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--azul);
-}
-.survey #result .results {
-  width: 100%;
-  margin-top: 50px;
-  background-color: white;
-  padding: 30px 30px 10px;
-  border-radius: 15px;
-  margin-bottom: 30px;
-  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-          box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-}
-.survey #result .results p {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 25px;
-}
-.survey #result .results .dotAfter {
-  position: relative;
-}
-.survey #result .results .dotAfter::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(80%, black), color-stop(50%, transparent));
-  background-image: linear-gradient(90deg, black 80%, transparent 50%);
-  background-size: 5px 1px;
-}
-.survey #result .results .total {
-  position: relative;
-}
-.survey #result .results .total b {
-  color: var(--azul);
-}
-.survey #result .results .total::before {
-  position: absolute;
-  content: "";
-  top: -5px;
-  width: 100%;
-  height: 1px;
-  background-color: var(--escuro);
-}
 
 @media screen and (max-width: 1024px) {
   .survey h2 {

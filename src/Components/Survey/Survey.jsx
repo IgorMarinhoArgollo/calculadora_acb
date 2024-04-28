@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './Survey.scss';
 import CurrencyInput from 'react-currency-input-field';
 import calculator from '../../Utils/Calculator/Caculator';
-
+import Results from '../Results/Results';
 
 export default function Survey() {
   const [disputeValue, setDisputeValue] = useState('');
@@ -10,24 +10,20 @@ export default function Survey() {
   const [numberOfArbitrators, setNumberOfArbitrators] = useState(0);
   const [showResult, setShowResult] = useState(false);
 
-  const [adminitrationFee, setAdministrationFee] = useState(0);
+  const [administrationFee, setAdministrationFee] = useState(0);
   const [registrationFee, setRegistrationFee] = useState(0);
   const [arbitratorsFee, setArbitratorsFee] = useState(0);
 
   const allQuestionsAnswered = () => {
     const numericValue = disputeValue ? parseFloat(disputeValue.replace(/,/g, '.')) : 0;
-    return disputeValue !== '' && disputeType !== '' && numberOfArbitrators !== '' && numericValue > 0;
+    return disputeValue !== '' && disputeType !== '' && numberOfArbitrators !== 0 && numericValue > 0;
   };
-  
-  const handleSubmit = async(e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     await calculator(disputeValue, disputeType, numberOfArbitrators, setRegistrationFee, setAdministrationFee, setArbitratorsFee);
-     setShowResult(true);
-
-    const resultElement = document.getElementById('result');
-    resultElement.scrollIntoView({ behavior: 'smooth' });
+    setShowResult(true);
   };
-  
 
   useEffect(() => {
     if (showResult) {
@@ -95,7 +91,7 @@ export default function Survey() {
           </label>
         </div>
 
-        
+
         <label htmlFor="numberOfArbitrators" className='questions'>
           3. Qual o número de árbitros?
         </label>
@@ -143,7 +139,6 @@ export default function Survey() {
             5
           </label>
         </div>
-
         <button
           type="submit"
           disabled={!allQuestionsAnswered()}
@@ -153,19 +148,15 @@ export default function Survey() {
       </form>
 
       {showResult && (
-        <div id="result">
-          <p>Valor da Demanda: <b className='formInfo'>R$ {parseFloat(disputeValue.replace(/,/g, '.')).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
-          <p>Tipo de Arbitragem: {disputeType =='exp'? <b className='formInfo'>Expedita</b> : <b className='formInfo'>Convencional</b>}</p>
-          <p>Número de árbitros: <b className='formInfo'>{numberOfArbitrators}</b></p>
-          <div className="results">
-            <p className='dotAfter'>Taxa de Registro: <b>R$ {parseFloat(registrationFee.toFixed(2)).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
-            <p className='dotAfter'>Taxa de Administração: <b>R$ {parseFloat(adminitrationFee.toFixed(2)).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
-            <p>Honorários dos Árbitros: <b>R$ {arbitratorsFee.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
-
-            <p className="total">Total: <b>R$ {parseFloat((registrationFee + adminitrationFee + arbitratorsFee).toFixed(2)).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</b></p>
-          </div>
-        </div>
+        <Results
+          disputeValue={disputeValue}
+          disputeType={disputeType}
+          numberOfArbitrators={numberOfArbitrators}
+          registrationFee={registrationFee}
+          administrationFee={administrationFee}
+          arbitratorsFee={arbitratorsFee}
+        />
       )}
     </div>
-  )
+  );
 }
