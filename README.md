@@ -25,6 +25,7 @@ Through the identification of the nonexistence of an official arbitration cost c
 
 The project had an effective development duration of 12 hours, where it went through stages such as the development of functionalities, responsiveness adjustments (different screen sizes), and quality of life implementations (thousands separation, some blocks, visual selection identification, etc.).
 <br/>
+<br/>
   
 ### Link
 #### <a href="https://calculadora-acb.netlify.app/" target="_blank">Calculadora de Custos  de Arbitragem ACB / ACB Arbitration Cost Calculator</a><br><br>
@@ -72,7 +73,7 @@ Acesse o site e faça a sua consulta respondendo a 3 perguntas. / Access the web
   
 
   ## Screenshots
-  ![ScreenShot](./public/calculadora.gif)<br><br>
+  ![ScreenShot](./public/calculadora.png)<br><br>
 
 ##  Author
 <a href="https://www.linkedin.com/in/igormarinhoargollo/">
