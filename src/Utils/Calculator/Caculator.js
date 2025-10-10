@@ -27,7 +27,6 @@ const calculator = async (
   setRegistrationFee(selectedCategory.registrationFee);
 
   let adminFee = Math.min(0.02 * numericValue, 180000);
-  adminFee = Math.max(adminFee, 5000);
   setAdministrationFee(adminFee);
 
   if (numberOfArbitrators === 1) {
