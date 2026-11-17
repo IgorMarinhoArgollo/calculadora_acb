@@ -1,86 +1,57 @@
-# Calculadora de Custos de Arbitragem da Associação Comercial da Bahia (ACB) / Arbitration Cost Calculator of the Bahia Commercial Association (ACB)
-<p>
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/igormarinhoargollo/calculadora_acb?color=%2304D361">
+# ACB Arbitration Cost Calculator
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/igormarinhoargollo/calculadora_acb">
-  
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/igormarinhoargollo/calculadora_acb">
-    
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
-</p>
-   
-Calculadora de Custos de Arbitragem da Associação Comercial da Bahia (ACB):
+![Last commit](https://img.shields.io/github/last-commit/IgorMarinhoArgollo/calculadora_acb)
+![License](https://img.shields.io/badge/license-MIT-brightgreen)
 
-Através da identificação da não existência de uma calculadora oficial de custos de arbitragem da ACB, essa necessidade foi identificada e, então, através das tabelas de custos da ACB, o projeto foi desenvolvido.
+🇧🇷 [Leia em português](./README.pt-br.md)
 
-O projeto teve uma duração efetiva de 12 horas de desenvolvimento, onde passou por etapas como o desenvolvimento das funcionalidades, os ajustes de responsividade (diferentes tamanhos de tela) e as implementações de qualidade de vida (separação dos milhares, alguns bloqueios, identificação visual de seleção etc).
- 
-<br>
+A web calculator that estimates arbitration costs for the **Bahia Commercial Association (ACB)**. The ACB had no official calculator, so I built one from its published cost tables, for a real client. Effective development time: about **12 hours**, from feature work to responsive layout and usability polish.
 
-***
+**🔗 Live demo: [calculadora-acb.netlify.app](https://calculadora-acb.netlify.app/)**
 
-Arbitration Cost Calculator of the Bahia Commercial Association (ACB):
+![Screenshot](./public/calculadora.png)
 
-Through the identification of the nonexistence of an official arbitration cost calculator by the ACB, this need was recognized, and then, based on the ACB cost tables, the project was developed.
+## How it works
 
-The project had an effective development duration of 12 hours, where it went through stages such as the development of functionalities, responsiveness adjustments (different screen sizes), and quality of life implementations (thousands separation, some blocks, visual selection identification, etc.).
-<br/>
-<br/>
-  
-### Link
-#### <a href="https://calculadora-acb.netlify.app/" target="_blank">Calculadora de Custos  de Arbitragem ACB / ACB Arbitration Cost Calculator</a><br><br>
+The user answers three questions:
 
+1. What is the dispute value?
+2. Which type of arbitration: expedited or conventional?
+3. How many arbitrators: 1 or 3?
 
+The calculator then shows the estimated registration fee, administration fee and arbitrators' fee. The rules follow the ACB cost tables: fees depend on the dispute-value band, the administration fee is a percentage of the dispute value with a cap, and expedited arbitration reduces the administration and arbitrators' fees. The calculation lives in [`src/Utils/Calculator`](./src/Utils/Calculator).
 
-### Objetivos / Goals
-- **Desenvolver uma calculadora de custos de arbitragem para a ACB / Develop an arbitration cost calculator for ACB.**
-- Funcionar em telas grandes e pequenas (Responsividade) / Work in large and small screens (Responsiveness);
-<br><br>
+## Highlights
 
-### Tecnologias Utilizadas / Used Technologies
-  * <img alt="javascript" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
-  * <img alt="node" src="https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
-  * <img alt="react" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-  * <img alt="html5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-  * <img alt="scss" src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" /><br><br>
+- Built from a real need and delivered for a real client
+- Responsive, from phones to large screens
+- Usability details: thousands separator in the value field, input blocking and visual feedback for the selected option
 
-### Como usar / How to use
-Acesse o site e faça a sua consulta respondendo a 3 perguntas. / Access the website and make your inquiry by answering 3 questions.<br><br>
+## Tech stack
 
-### Como Rodar / How to Run
-  #### Requerimentos / Requirements:
-    * Node v21
-    * Google Chrome
-  
-  #### Clone o repositório (via SSH) / Clone the repository (via SSH)
-  No terminal / On terminal:
-  
-    git clone git@github.com:IgorMarinhoArgollo/calculadora_acb.git
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
 
-  
-  #### Instalando as dependências / Installing dependencies:
-  No terminal / On terminal:
-  
-    npm install
+## Running locally
 
+Requirements: Node.js 21 or newer.
 
-  #### Inicializando / Starting
-  No terminal / On terminal:
-  
-    npm run dev
+```bash
+git clone https://github.com/IgorMarinhoArgollo/calculadora_acb.git
+cd calculadora_acb
+npm install
+npm run dev
+```
 
-  <br />
-  
+Other scripts: `npm run build`, `npm run preview` and `npm run lint`.
 
-  ## Screenshots
-  ![ScreenShot](./public/calculadora.png)<br><br>
+## Author
 
-##  Author
-<a href="https://www.linkedin.com/in/igormarinhoargollo/">
- <img style="border-radius:300px;" src="https://avatars.githubusercontent.com/u/85767736?s=96&v=4" width="100px;" alt=""/>
- <br />
- <sub><b>Igor Marinho Argollo</b></sub></a> <a href="https://www.linkedin.com/in/igormarinhoargollo/"></a>
- <br />
- 
-  ### Licença / License
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen"><br><br>
+**Igor Marinho Argollo** · [LinkedIn](https://www.linkedin.com/in/igormarinhoargollo/) · [Portfolio](https://igor-marinho.netlify.app/)
+
+## License
+
+MIT
